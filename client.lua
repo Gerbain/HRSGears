@@ -111,14 +111,20 @@ function resetvehicle()
     ready = false
 end
 
-function isVehicleExcluded(vehicleModel)
-    for _, excludedVehicle in ipairs(Config.excludedVehicles) do
-        if GetHashKey(excludedVehicle) == vehicleModel then
-            return true
+function isVehicleExcluded(vehicle)
+    if vehicle and vehicle ~= 0 then
+        local modelHash = GetEntityModel(vehicle) -- Get the model hash of the vehicle
+
+        for _, excludedVehicle in ipairs(Config.excludedVehicles) do
+            if GetHashKey(excludedVehicle) == modelHash then
+                return true
+            end
         end
     end
+
     return false
 end
+
 
 Citizen.CreateThread(function()
     while true do
