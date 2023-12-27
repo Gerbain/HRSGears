@@ -129,9 +129,9 @@ end
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        if manualon == true and vehicle ~= nil then
-        DisableControlAction(0, 80, true)
-        DisableControlAction(0, 21, true)
+        if manualon and vehicle ~= nil and not isVehicleExcluded(vehicle) then
+          DisableControlAction(0, 80, true)
+          DisableControlAction(0, 21, true)
         end
     end
 
@@ -142,7 +142,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
 
-        if manualon == true and vehicle ~= nil then
+        if manualon and vehicle ~= nil and not isVehicleExcluded(vehicle) then
 
             if vehicle ~= nil then
 
@@ -251,7 +251,7 @@ end
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        if manualon == true and vehicle ~= nil then
+        if manualon and vehicle ~= nil and not isVehicleExcluded(vehicle) then
             if selectedgear == -1 then
                 if GetVehicleCurrentGear(vehicle) == 1 then
                     DisableControlAction(0, 71, true)
@@ -286,7 +286,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
         if realistic == true then
-            if manualon == true and vehicle ~= nil then
+            if manualon and vehicle ~= nil and not isVehicleExcluded(vehicle) then
                 if selectedgear > 1 then
                     if IsControlPressed(0,71) then
                         local speed = GetEntitySpeed(vehicle)
@@ -421,7 +421,7 @@ if Config.gearhud == 1 then
     Citizen.CreateThread(function()
         while true do
             Citizen.Wait(0)
-            if manualon == true and vehicle ~= nil then
+            if manualon and vehicle ~= nil and not isVehicleExcluded(vehicle) then
 
             SetTextFont(0)
             SetTextProportional(1)
@@ -445,7 +445,7 @@ elseif Config.gearhud == 2 then
     Citizen.CreateThread(function()
         while true do
             Citizen.Wait(0)
-            if manualon == true and vehicle ~= nil then
+            if manualon and vehicle ~= nil and not isVehicleExcluded(vehicle) then
 
             SetTextFont(0)
             SetTextProportional(1)
@@ -498,7 +498,7 @@ end
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        --if manualon == true and vehicle ~= nil then
+        --if manualon and vehicle ~= nil and not isVehicleExcluded(vehicle) then
 
 
 
