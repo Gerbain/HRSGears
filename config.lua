@@ -19,11 +19,11 @@ Config.gears = {
 }
 
 Config.vehicles = {
-    [GetHashKey('omnis')] = { 
+    [GetHashKey('omnis')] = {
         [5] = {3.885, 2.312, 1.51848, 1.0688, 0.90},--5 Audi 4 trans
         [6] = {3.33,2.5, 2.0, 1.633, 1.089, 0.90},--6 2008 Subaru Impreza WRC2008 (S14) trans
     },
-    -- [GetHashKey('audquattros')] = { 
+    -- [GetHashKey('audquattros')] = {
     --     [5] = {3.885, 2.312, 1.51848, 1.0688, 0.90},--5 Audi 4 trans
     --     [6] = {3.33,2.5, 2.0, 1.633, 1.089, 0.90},--6 2008 Subaru Impreza WRC2008 (S14) trans
     -- },
@@ -42,12 +42,19 @@ Config.vehicles = {
     -- },
     -- [GetHashKey('gauntlet4')] = {
 
-        
+
     --     [8] = {6.36, 4.24, 2.8416, 2.249, 1.733, 1.349, 1.132, 0.90},--8
     --     [9] = {7.70, 4.51, 3.22, 2.52, 2.20, 2.08, 1.73, 1.31, 0.90}--9
     -- },
 
-    
+
+}
+
+Config.excludedVehicles = {
+    'police',
+    'police2',
+    'buffalo',
+    -- Add more vehicle names or hashes here
 }
 
 
@@ -55,4 +62,3 @@ Config.enginebrake = true -- brakes the car if you downshift the wrong way
 
 
 Config.gearhud = 2 -- if 1 - show gear / if 2 show gear and km/h and Rpm from 0 to 1 / if 0 disable hud
-
